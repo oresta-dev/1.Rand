@@ -1,21 +1,44 @@
 ---
 ---
 
-<nav class="absolute top-10  w-full">
-    <div class="flex items-center justify-between mx-6">
-        <img src="/logo_rand.png" alt="Logo de la empresa" class="h-fit w-40">
-    
-        <ul class="hidden">
-            <li>Inicio</li>
-            <li>Nosotros</li>
-            <li>Servicios</li>
-            <li>Contacto</li>
-        </ul>
-    
-    
-        <div class="">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="white"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
-        </div>
+<nav class="fixed top-0 left-0 right-0 z-50 w-full py-4 transition-colors duration-300" id="mainNav">
+  <div class="mx-auto px-6">
+    <div class="flex items-center justify-between w-full max-w-screen-xl mx-auto">
+      <img src="/logo_rand.png" alt="Logo de la empresa" class="h-auto w-40">
+      
+      <ul class="hidden md:flex space-x-6 text-white">
+        <li><a href="#" class="hover:text-gray-300">Inicio</a></li>
+        <li><a href="#" class="hover:text-gray-300">Nosotros</a></li>
+        <li><a href="#" class="hover:text-gray-300">Servicios</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contacto</a></li>
+      </ul>
+      
+      <div class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 6l16 0" />
+          <path d="M4 12l16 0" />
+          <path d="M4 18l16 0" />
+        </svg>
+      </div>
     </div>
+  </div>
 </nav>
 
+<script>
+  const nav = document.getElementById('mainNav');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('bg-[#2e313e]');
+    } else {
+      nav.classList.remove('bg-[#2e313e]');
+    }
+  });
+</script>
+
+<style>
+    .bg-[#2e313e] {
+      background-color: #2e313e;
+    }
+  </style>
