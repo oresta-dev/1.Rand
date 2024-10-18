@@ -1,0 +1,162 @@
+---
+import Navbar from "../components/navbar.astro";
+import Hero from "../sections/Hero.astro";
+import CtaFreeConsulting from "../components/ctaFreeConsulting.astro";
+import Layout from "../layouts/Layout.astro";
+
+
+---
+
+
+
+<Layout title="Welcome to Astro.">
+    
+    <Navbar/>
+    <section class="img__hero min-h-screen flex items-center justify-center">
+    
+        <div class="text-white mx-6 pb-48 pt-52  flex flex-col items-center gap-5 text-center text-balance max-w-screen-xl">
+            <h1 class="font-semibold text-4xl lg:text-5xl">Derecho administrativo</h1>
+            <div class="h-0.5 w-7/12 bg-yellow-400 rounded-full max-w-[400px]"></div>
+            <p class="font-medium text-balance max-w-[780px]">Somos una firma con 24 años de experiencia, expertos en abordar situaciones legales complejas con eficacia. Confía en nuestros abogados para una asesoría integral y cumplimiento normativo.</p>
+            
+            <div class="flex flex-wrap justify-center mt-5  items-center gap-8">
+                
+                <button class="flex items-center gap-3 border-2 border-transparent py-2.5 px-6 rounded-full mt-4 border-secondary transition-all duration-300 hover:border-yellow-400 ">
+                    Contáctanos ahora
+                    <div class="rotate-90">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-36 bg-[#f9f9f9] flex items-center justify-center">
+        <div class="mx-6 flex flex-col gap-14 md:flex-row max-w-screen-xl w-full ">
+            <aside class="flex flex-col gap-8 w-full ">
+                <h2 class="uppercase flex flex-col text-3xl lg:text-4xl">Abogados en <strong class="text-[#2d2e3e]">derecho administrativo</strong></h2>
+                <img src="/image.png" alt="" class="w-fit rounded-xl">
+                <p class="max-w-[588px]">Te ayudamos a proteger tu patrimonio previniendo riesgos que podrían derivar en costosos juicios. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley, garantizando tu tranquilidad y seguridad financiera.</p>
+                <CtaFreeConsulting/>
+            </aside>
+            <aside class="w-full">
+                <img src="/img_test.png" alt="" class="min-h-full rounded-xl md:w-full bg-cover bg-center object-cover lg:h-[10rem]">
+            </aside>
+        </div>
+    </section>
+
+    <section class="py-32 flex items-center justify-center">
+        <div class="mx-6 rounded-xl bg-primary bg-opacity-25 py-6 px-8 flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
+            <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl">Abogados en <strong class="text-[#2d2e3e]">derecho administrativo</strong></h2>
+            <ol class="list-decimal ml-5 mb-20 grid md:grid-cols-3 md:justify-between md:place-items-center">
+                <div class="">
+                    <li>Juicios (SAT- IMSS - INFONAVIT - FINANZAS)</li>
+                    <li>Juicios de Nulidad</li>
+                </div>
+                <div class="">
+                    <li>Juicios de Amporo</li>
+                    <li>Créditos fiscales</li>
+                </div>
+                <div class="">
+                    <li>Devoluciones de IVA</li>
+                    <li>Aclaraciones</li>
+                </div>
+            </ol>
+        </div>
+    </section>
+    
+    <section class="py-32 flex items-center justify-center">
+        <div class="mx-6 rounded-xl flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
+            <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl">
+                <strong class="text-[#2d2e3e] text-center">Conoce todos nuestros</strong> servicios legales
+            </h2>
+    
+            <div class="w-full overflow-hidden flex justify-center items-center rounded-xl">
+                <div class="flex snap-x snap-mandatory overflow-x-scroll rounded-xl scrollbar-hide first:ml-6 last:mr-6">
+                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
+                        <h3 class="font-bold text-2xl">Derecho civil</h3>
+                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+    
+                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
+                        <h3 class="font-bold text-2xl">Derecho penal</h3>
+                        <p class="mb-4 text-base">En derecho penal, contar con un equipo legal experimentado es crucial. Nuestros abogados te ofrecen una defensa sólida y protegen tus derechos en todo momento.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+    
+                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
+                        <h3 class="font-bold text-2xl">Derecho Mercantil</h3>
+                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
+                        <h3 class="font-bold text-2xl">Derecho S</h3>
+                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+                    <article class="img__hero flex-shrink-0 mr-6 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
+                        <h3 class="font-bold text-2xl">Derecho AS</h3>
+                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="py-32 flex items-center justify-center">
+        <div class="mx-6 rounded-xl  flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
+            <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl"><strong class="text-[#2d2e3e] text-center">Conoce todos nuestros</strong> servicios legales</h2>
+
+            <div class="overflow-x-hidden w-full flex justify-center">
+
+                <div class="flex snap-x snap-mandatory overflow-x-scroll scrollbar-hide w-4/5 [&>article]:mr-4">
+
+                    <article class="img__hero flex flex-col min-w-full gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
+                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
+                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+                    
+                    <article class="img__hero flex flex-col min-w-full  gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
+                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
+                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+                    
+                    <article class="img__hero flex flex-col min-w-full  gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
+                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
+                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
+                        <CtaFreeConsulting/>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+   
+	
+</Layout>
+
+
+
+
+<style>
+
+    .img__hero {
+        background-image: linear-gradient(180deg, #12121298 34%, #1c1c1c), url(/img_s.webp);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+
+</style>
