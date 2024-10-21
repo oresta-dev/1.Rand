@@ -9,11 +9,11 @@ import CtaFreeConsulting from '../components/ctaFreeConsulting.astro'
         
         <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-15 z-40 hidden"></div>
         
-        <ul id="mobileMenu" class="flex flex-col gap-5 items-center text-white text-lg font-semibold fixed top-0 right-[-100%] bg-opacity-10 backdrop-blur-[8px] bg-[#1a1a1a] min-h-screen max-w-[290px] w-[290px] transition-all duration-300 ease-in-out z-50 lg:static lg:min-h-fit lg:flex-row lg:w-full lg:max-w-max lg:backdrop-blur-0">
-          <li class="mt-44 lg:m-0"><a href="/" class="hover:text-gray-300">Inicio</a></li>
-          <li><a href="/services" class="hover:text-gray-300">Nosotros</a></li>
-          <li><a href="#" class="hover:text-gray-300">Servicios</a></li>
-          <li><a href="#" class="hover:text-gray-300">Contacto</a></li>
+        <ul id="mobileMenu" class="flex flex-col gap-5 items-center text-white text-lg font-semibold fixed top-0 right-[-100%] bg-opacity-10 backdrop-blur-[8px] bg-[#1a1a1a] min-h-screen max-w-[290px] w-[290px] transition-all duration-300 ease-in-out lg:bg-transparent lg:blur-none z-50 lg:static lg:min-h-fit lg:flex-row lg:w-full lg:max-w-max lg:backdrop-blur-0">
+          <li class="mt-44 lg:m-0"><a href="/" class="nav-link hover:text-gray-300">Inicio</a></li>
+          <li><a href="/services" class="nav-link hover:text-gray-300">Nosotros</a></li>
+          <li><a href="#" class="nav-link hover:text-gray-300">Servicios</a></li>
+          <li><a href="#" class="nav-link hover:text-gray-300">Contacto</a></li>
           <li class="">
             <CtaFreeConsulting/>
           </li>
@@ -34,47 +34,70 @@ import CtaFreeConsulting from '../components/ctaFreeConsulting.astro'
   </nav>
   
   <script>
-    const nav = document.getElementById('mainNav');
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    let isOpen = false;
-  
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
-        nav.classList.add('bg-secondary');
-      } else {
-        nav.classList.remove('bg-secondary');
+    function setupNavigation() {
+      const nav = document.getElementById('mainNav');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      let isOpen = false;
+    
+      function toggleMenu() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          mobileMenu.style.right = '0';
+          menuToggle.classList.add('open');
+          menuOverlay.classList.remove('hidden');
+        } else {
+          mobileMenu.style.right = '-100%';
+          menuToggle.classList.remove('open');
+          menuOverlay.classList.add('hidden');
+        }
       }
-    });
-  
-    function toggleMenu() {
-      isOpen = !isOpen;
-      if (isOpen) {
-        mobileMenu.style.right = '0';
-        menuToggle.classList.add('open');
-        menuOverlay.classList.remove('hidden');
-      } else {
-        mobileMenu.style.right = '-100%';
-        menuToggle.classList.remove('open');
-        menuOverlay.classList.add('hidden');
-      }
+    
+      menuToggle.addEventListener('click', toggleMenu);
+    
+      menuOverlay.addEventListener('click', (event) => {
+        if (event.target === menuOverlay) {
+          toggleMenu();
+        }
+      });
+    
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && isOpen) {
+          toggleMenu();
+        }
+      });
+    
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+          nav.classList.add('bg-secondary');
+        } else {
+          nav.classList.remove('bg-secondary');
+        }
+      });
     }
-  
-    menuToggle.addEventListener('click', toggleMenu);
-  
-    menuOverlay.addEventListener('click', (event) => {
-      if (event.target === menuOverlay) {
-        toggleMenu();
-      }
+
+    function updateActiveLink() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname;
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Ejecutar setupNavigation y updateActiveLink al cargar la página
+    document.addEventListener('astro:page-load', () => {
+      setupNavigation();
+      updateActiveLink();
     });
-  
-    // Cierra el menú si se presiona la tecla Escape
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && isOpen) {
-        toggleMenu();
-      }
-    });
+
+    // Ejecutar updateActiveLink después de cada navegación
+    document.addEventListener('astro:after-swap', updateActiveLink);
   </script>
   
   <style>
@@ -100,5 +123,30 @@ import CtaFreeConsulting from '../components/ctaFreeConsulting.astro'
   
     #menuToggle.open span:last-child {
       transform: rotate(-45deg);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #ffffff;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: #ffffff;
     }
   </style>
