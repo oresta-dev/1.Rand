@@ -1,5 +1,6 @@
 ---
 import CtaFreeConsulting from '../components/ctaFreeConsulting.astro'
+import Telephone from '../Icons/Telephone.astro'
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 w-full py-7 transition-colors duration-300" id="mainNav">
@@ -15,7 +16,9 @@ import CtaFreeConsulting from '../components/ctaFreeConsulting.astro'
           <li><a href="#" class="nav-link hover:text-gray-300">Servicios</a></li>
           <li><a href="#" class="nav-link hover:text-gray-300">Contacto</a></li>
           <li class="">
-            <CtaFreeConsulting/>
+            <CtaFreeConsulting title="Aseosría gratuita">
+                <Telephone slot='icon'/>
+            </CtaFreeConsulting>
           </li>
         </ul>
 

@@ -3,8 +3,9 @@ import Navbar from "../components/navbar.astro";
 import Hero from "../sections/Hero.astro";
 import CtaFreeConsulting from "../components/ctaFreeConsulting.astro";
 import Layout from "../layouts/Layout.astro";
+import { Services as LegalServices } from '../const/services.js'
 
-
+console.log(LegalServices)
 ---
 
 
@@ -72,34 +73,64 @@ import Layout from "../layouts/Layout.astro";
             </h2>
     
             <div class="w-full overflow-hidden flex justify-center items-center rounded-xl">
-                <div class="flex snap-x snap-mandatory overflow-x-scroll rounded-xl scrollbar-hide first:ml-6 last:mr-6 md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3">
-                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
-                        <h3 class="font-bold text-2xl">Derecho civil</h3>
-                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-    
-                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
-                        <h3 class="font-bold text-2xl">Derecho penal</h3>
-                        <p class="mb-4 text-base">En derecho penal, contar con un equipo legal experimentado es crucial. Nuestros abogados te ofrecen una defensa sólida y protegen tus derechos en todo momento.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-    
-                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
-                        <h3 class="font-bold text-2xl">Derecho Mercantil</h3>
-                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-                    <article class="img__hero flex-shrink-0 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
-                        <h3 class="font-bold text-2xl">Derecho S</h3>
-                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-                    <article class="img__hero flex-shrink-0 mr-6 w-[85%] snap-center flex flex-col gap-4 items-center justify-center p-7 bg-[#2d2e3e] text-center text-balance rounded-xl text-white mx-[2.5%]">
-                        <h3 class="font-bold text-2xl">Derecho AS</h3>
-                        <p class="mb-4 text-base">En derecho laboral, es fundamental contar con asesoría especializada. Nuestro equipo te guía en tus derechos y obligaciones, tanto si eres empleador como empleado.</p>
-                        <CtaFreeConsulting/>
-                    </article>
+                <div class="flex snap-x snap-mandatory overflow-x-scroll relative rounded-xl scrollbar-hide first:ml-6 last:mr-6 md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+                    {
+                        LegalServices.map(({id, title, description, buttonText}, idx) =>{
+                            console.log(id, title, idx, LegalServices.length)
+                            return(
+                                <article 
+                                    class="img__hero flex-shrink-0 w-[85%] h-[20rem] relative snap-center rounded-xl mx-[2.5%] group hover:cursor-pointer overflow-hidden md:m-0 md:w-full"
+                                >
+                                    <div class=" h-full w-full relative flex items-center justify-center">
+                                        <div class="flex flex-col items-center justify-center w-full h-full ">
+                                            <h3 
+                                                class="font-bold text-2xl  text-center  text-white uppercase transition-all duration-300  absolute max-w-[280px] group-hover:-translate-y-[6.5rem] group-hover:"
+                                            >
+                                                {title}
+                                            </h3>
+                                            
+                                            <div class="transition-all duration-300 flex flex-col items-center justify-center gap-4 opacity-0 translate-y-32 group-hover:translate-y-8 group-hover:opacity-100 text-white text-center">
+                                                <p class="text-base">
+                                                    {description}
+                                                </p>
+                                                <CtaFreeConsulting title={buttonText}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* {
+                                        idx + 1 === LegalServices.length && (
+                                            <div class="bg-red-500 absolute top-0 right-10">asdsad</div>
+                                        )
+                                    } */}
+                                        <div class="py-1 px-3 bg-secondary border border-[#ffffff40] rounded-full text-white text-sm absolute top-3 right-3 ">Último servicio</div>
+                                        {/* <div class="py-1 px-3 border-[1px] border-primary rounded-full text-white text-sm absolute top-3 right-3 backdrop-blur-3xl bg-[#2d2d2d43]">Último servicio</div> */}
+                                </article>
+                            )
+                        })
+                    }
+<!-- 
+<article 
+class="img__hero flex-shrink-0 w-full h-[20rem] snap-center rounded-xl mx-[2.5%] group hover:cursor-pointer overflow-hidden md:m-0"
+>
+<div class=" h-full w-full relative flex items-center justify-center p-7">
+    <div class="flex flex-col items-center justify-center w-full h-full">
+        <h3 
+            class="font-bold text-2xl max-w-[250px] text-center  text-white uppercase transition-all duration-300 absolute top-1/2 -translate-y-1/2 group-hover:top-6 group-hover:translate-y-0"
+        >
+            {title}
+        </h3>
+        
+        <div class="transition-all duration-300 flex flex-col items-center justify-center gap-8 opacity-0 translate-y-32 group-hover:translate-y-8 group-hover:opacity-100 text-white text-center">
+            <p class="text-base ">
+                {description}
+            </p>
+            <CtaFreeConsulting title={buttonText}/>
+        </div>
+    </div>
+</div>
+</article> -->
+
+                 
                 </div>
             </div>
         </div>
