@@ -148,11 +148,13 @@ const { service } = Astro.props;
   <!-- CTA -->
   <section class="mt-32 mb-0 bg-secondary text-white relative overflow-hidden">
       <div class="flex flex-col gap-14 md:flex-row max-w-screen-xl mx-auto relative z-10">
-          <aside class="flex m-0 flex-col justify-center items-start py-10 gap-8 md:py-44 w-full md:w-1/2 pr-6">
-              <h2 class="uppercase flex flex-col text-3xl lg:text-4xl">Accede a nuestra asesoría legal<strong class="text-primary">Gratuita</strong></h2>
-              <img src="/img_test.png" alt="" class="w-full object-cover md:hidden">
-              <p class="max-w-[588px]">Te ayudamos a proteger tu patrimonio previniendo riesgos que podrían derivar en costosos juicios. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley, garantizando tu tranquilidad y seguridad financiera.</p>
-              <CtaFreeConsulting title="Solicita tu asesoría GRATUITA"/>
+          <aside class="flex m-0 flex-col justify-center items-start py-10 gap-8 md:py-44 w-full md:w-1/2 pr-6 md:mx-5 xl:m-0">
+              <h2 class="uppercase flex flex-col text-3xl lg:text-4xl mx-5 sm:mx-0">Accede a nuestra asesoría legal<strong class="text-primary">Gratuita</strong></h2>
+              <img src="/img_test.png" alt="" class="w-full object-cover md:hidden ">
+              <p class="max-w-[588px] mx-5 sm:mx-0">Te ayudamos a proteger tu patrimonio previniendo riesgos que podrían derivar en costosos juicios. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley, garantizando tu tranquilidad y seguridad financiera.</p>
+              <div class="mx-5 md:mx-0">
+                <CtaFreeConsulting title="Solicita tu asesoría GRATUITA"/>
+              </div>
           </aside>
       </div>
       <aside class="hidden md:block absolute top-0 right-0 w-[45%] h-full">
