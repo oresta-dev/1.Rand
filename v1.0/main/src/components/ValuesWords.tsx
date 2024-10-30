@@ -149,7 +149,7 @@ export default function ValuesWords() {
     };
 
     return (
-        <div className="flex flex-col gap-10 items-center justify-center bg-red-500 md:flex-row w-full">
+        <div className="flex flex-col gap-10 items-center justify-center md:flex-row w-full">
             <div className="flex flex-wrap items-center justify-center gap-8 md:max-w-[380px]">
                 {words.map((item) => (
                     <div
@@ -171,7 +171,7 @@ export default function ValuesWords() {
                 ))}
             </div>
 
-            <div ref={contentRef} className=" min-h-[150px] bg-yellow-500 md:w-1/3">
+            <div ref={contentRef} className=" min-h-[150px] md:w-1/3">
                 {selectedWord && (
                     <div className="flex flex-col gap-2">
                         <div className="flex gap-3 items-center">
