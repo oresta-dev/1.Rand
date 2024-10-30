@@ -4,8 +4,19 @@ import Hero from "../sections/Hero.astro";
 import CtaFreeConsulting from "../components/ctaFreeConsulting.astro";
 import Layout from "../layouts/Layout.astro";
 import { Services as LegalServices } from '../const/services.js'
+import HeroS from "@sections/Hero_S.astro";
+import DescriptionS from "@sections/Description_S.astro";
 
-console.log(LegalServices)
+// improt Hero_S from '@sections/HeroS'
+
+interface Props {
+  LegalServices: {
+    id: string;
+    title: string;
+    description: string;
+    buttonText: string;
+  }[];
+}
 ---
 
 
@@ -13,38 +24,13 @@ console.log(LegalServices)
 <Layout title="Welcome to Astro.">
     
     <Navbar/>
-    <section class="img__hero min-h-screen flex items-center justify-center">
+    <HeroS 
+        title="Derecho administrativo" 
+        description="Somos una firma con 24 años de experiencia, expertos en abordar situaciones legales complejas con eficacia. Confía en nuestros abogados para una asesoría integral y cumplimiento normativo."
+        buttonText="Contáctanos ahora"    
+    />
+    <DescriptionS/>
     
-        <div class="text-white mx-6 pb-48 pt-52  flex flex-col items-center gap-5 text-center text-balance max-w-screen-xl">
-            <h1 class="font-semibold text-4xl lg:text-5xl">Derecho administrativo</h1>
-            <div class="h-0.5 w-7/12 bg-yellow-400 rounded-full max-w-[400px]"></div>
-            <p class="font-medium text-balance max-w-[780px]">Somos una firma con 24 años de experiencia, expertos en abordar situaciones legales complejas con eficacia. Confía en nuestros abogados para una asesoría integral y cumplimiento normativo.</p>
-            
-            <div class="flex flex-wrap justify-center mt-5  items-center gap-8">
-                
-                <button class="flex items-center gap-3 border-2 border-transparent py-2.5 px-6 rounded-full mt-4 border-secondary transition-all duration-300 hover:border-yellow-400 ">
-                    Contáctanos ahora
-                    <div class="rotate-90">
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-36 bg-[#f9f9f9] flex items-center justify-center">
-        <div class="mx-6 flex flex-col gap-14 md:flex-row max-w-screen-xl w-full ">
-            <aside class="flex flex-col gap-8 w-full ">
-                <h2 class="uppercase flex flex-col text-3xl lg:text-4xl">Abogados en <strong class="text-[#2d2e3e]">derecho administrativo</strong></h2>
-                <img src="/image.png" alt="" class="w-fit rounded-xl">
-                <p class="max-w-[588px]">Te ayudamos a proteger tu patrimonio previniendo riesgos que podrían derivar en costosos juicios. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley, garantizando tu tranquilidad y seguridad financiera.</p>
-                <CtaFreeConsulting/>
-            </aside>
-            <aside class="w-full">
-                <img src="/img_test.png" alt="" class="min-h-full rounded-xl md:w-full bg-cover bg-center object-cover lg:h-[10rem]">
-            </aside>
-        </div>
-    </section>
 
     <section class="py-32 flex items-center justify-center">
         <div class="mx-6 rounded-xl bg-primary bg-opacity-25 py-6 px-8 flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
@@ -67,74 +53,86 @@ console.log(LegalServices)
     </section>
     
     <section class="pb-32 py-28 flex items-center justify-center">
-        <div class="mx-6 rounded-xl flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
-            <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl">
-                <strong class="text-[#2d2e3e] text-center">Conoce todos nuestros</strong> servicios legales
-            </h2>
+      <div class="mx-6 rounded-xl flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
+        <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl">
+          <strong class="text-[#2d2e3e] text-center">Conoce todos nuestros</strong> 
+          servicios legales
+        </h2>
     
-            <div class="w-full overflow-hidden flex justify-center items-center rounded-xl">
-                <div class="flex snap-x snap-mandatory overflow-x-scroll relative rounded-xl scrollbar-hide first:ml-6 last:mr-6 md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+        <div class="w-full overflow-hidden flex justify-center items-center rounded-xl">
+          <div class="flex snap-x snap-mandatory overflow-x-scroll relative rounded-xl scrollbar-hide first:ml-6 last:mr-6 md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+            {
+              LegalServices.map((service, idx) => (
+                <a 
+                  href={`/services/${service.id.toLowerCase()}`}
+                  class="block relative rounded-xl overflow-hidden
+                    flex-shrink-0 w-[85%] snap-center mx-[2.5%] 
+                    md:m-0 md:w-full md:transition-all md:duration-300 md:hover:shadow-xl"
+                >
+                  <div 
+              
+                    class="img__hero relative h-[20rem] md:h-80 group"
+                  >
+                    <div class="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
+                    
+                    {/* Mobile Layout */}
+                    <div class="relative h-full w-full flex items-center justify-center md:hidden">
+                      <div class="flex flex-col items-center justify-center w-full h-full">
+                        <h3 
+                          transition:name={`title-${service.id}`}
+                          class="font-bold text-2xl text-center text-white uppercase transition-all duration-300 max-w-[280px]"
+                        >
+                          {service.title}
+                        </h3>
+                        
+                        <div class="transition-all duration-300 flex flex-col items-center justify-center gap-2 text-white text-center px-4">
+                          <p class="text-base line-clamp-2 mx-3 text-balance">
+                            {service.description}
+                          </p>
+                          <button transition:name={`title-${service.id}button`} class="py-2 px-6 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20">
+                            {service.buttonText}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+    
+                    {/* Desktop Layout */}
+                    <div class="hidden md:flex relative h-full w-full items-center justify-center">
+                      <div class="flex flex-col items-center justify-center w-full h-full">
+                        <div class="transition-all flex flex-col items-center justify-center gap-0 px-4 text-white text-center">
+                          <h3 
+                            transition:name={`title-${service.id}`}
+                            class="font-bold h-[64px] max-w-[170px] mt-2 text-2xl flex items-center justify-center text-white uppercase duration-[400ms] md:relative md:top-1/2 md:-translate-y-10 transition-all md:group-hover:translate-y-0 md:group-hover:top-0"
+                          >
+                            {service.title}
+                          </h3>
+                          
+                          <div class="text-base max-w-full mt-3 transition-all duration-500 translate-y-48 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                            <p>{service.description}</p>
+                            <button transition:name={`title-${service.id}button`}  class="py-2 px-6 mt-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20">
+                              {service.buttonText}
+                            </button>   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    
                     {
-                        LegalServices.map(({id, title, description, buttonText}, idx) =>{
-                            console.log(id, title, idx, LegalServices.length)
-                            return(
-                                <article 
-                                    class="img__hero flex-shrink-0 w-[85%] h-[20rem] relative snap-center rounded-xl mx-[2.5%] group hover:cursor-pointer overflow-hidden md:m-0 md:w-full"
-                                >
-                                    <div class=" h-full w-full relative flex items-center justify-center">
-                                        <div class="flex flex-col items-center justify-center w-full h-full ">
-                                            <h3 
-                                                class="font-bold text-2xl  text-center  text-white uppercase transition-all duration-300  absolute max-w-[280px] group-hover:-translate-y-[6.5rem] group-hover:"
-                                            >
-                                                {title}
-                                            </h3>
-                                            
-                                            <div class="transition-all duration-300 flex flex-col items-center justify-center gap-4 opacity-0 translate-y-32 group-hover:translate-y-8 group-hover:opacity-100 text-white text-center">
-                                                <p class="text-base">
-                                                    {description}
-                                                </p>
-                                                <CtaFreeConsulting title={buttonText}/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* {
-                                        idx + 1 === LegalServices.length && (
-                                            <div class="bg-red-500 absolute top-0 right-10">asdsad</div>
-                                        )
-                                    } */}
-                                        <div class="py-1 px-3 bg-secondary border border-[#ffffff40] rounded-full text-white text-sm absolute top-3 right-3 ">Último servicio</div>
-                                        {/* <div class="py-1 px-3 border-[1px] border-primary rounded-full text-white text-sm absolute top-3 right-3 backdrop-blur-3xl bg-[#2d2d2d43]">Último servicio</div> */}
-                                </article>
-                            )
-                        })
+                      idx + 1 === LegalServices.length && (
+                        <div class="py-1 px-3 border-[1px] border-white/30 rounded-full text-white text-sm absolute top-3 right-3 backdrop-blur-3xl bg-black/30">
+                          Último servicio
+                        </div>
+                      )
                     }
-<!-- 
-<article 
-class="img__hero flex-shrink-0 w-full h-[20rem] snap-center rounded-xl mx-[2.5%] group hover:cursor-pointer overflow-hidden md:m-0"
->
-<div class=" h-full w-full relative flex items-center justify-center p-7">
-    <div class="flex flex-col items-center justify-center w-full h-full">
-        <h3 
-            class="font-bold text-2xl max-w-[250px] text-center  text-white uppercase transition-all duration-300 absolute top-1/2 -translate-y-1/2 group-hover:top-6 group-hover:translate-y-0"
-        >
-            {title}
-        </h3>
-        
-        <div class="transition-all duration-300 flex flex-col items-center justify-center gap-8 opacity-0 translate-y-32 group-hover:translate-y-8 group-hover:opacity-100 text-white text-center">
-            <p class="text-base ">
-                {description}
-            </p>
-            <CtaFreeConsulting title={buttonText}/>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
         </div>
-    </div>
-</div>
-</article> -->
-
-                 
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
+    
 
     <section class="mt-32 mb-0 bg-secondary text-white relative overflow-hidden">
         <div class="flex flex-col  gap-14 md:flex-row max-w-screen-xl mx-auto relative z-10">
@@ -150,123 +148,7 @@ class="img__hero flex-shrink-0 w-full h-[20rem] snap-center rounded-xl mx-[2.5%]
         </aside>
     </section>
 
-    <section class="bg-secondary 28 py-32 px-6 text-white flex items-center justify-center">
-        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 w-full max-w-screen-xl lg:grid-cols-3">
-            <aside class="flex flex-col gap-5">
-                <img src="/logo_rand.png" alt="" class="w-fit">
-                <!-- Contact -->
-                <div class="mt-5">
-                    <h3 class="uppercase font-semibold text-sm text-primary">Contacto</h3>
-                    <div class="mt-3 flex flex-col gap-1">
-                        <h4 class="uppercase font-semibold text-xs text-primary">Oficinas</h4>
-                        <a class="flex items-center gap-2">
-                            5552-031493
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" /></svg>                            
-                        </a>
-                        
-                        <a class="flex items-center gap-2">
-                            5552-031493
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" /></svg>
-                        </a>
-                        
-                    </div>
-                    <div class="mt-3 flex flex-col gap-1">
-                        <h4 class="uppercase font-semibold text-xs text-primary">Atención a clientes</h4>
-                        <a class="flex items-center gap-2">
-                            5552-031493
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="19"  height="19"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
-                        </a>
-                        <a class="flex items-center gap-2">
-                            contacto@rand.com.mx
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="19"  height="19"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Follow Us -->
-                <div class="">
-                    <h3 class="uppercase font-semibold text-sm text-primary">Síguenos</h3>
-                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
-                </div>
-                
-                <!-- Privicy notice -->
-                <div class="">
-                    <h3 class="uppercase font-semibold text-sm text-primary">Aviso de privacidad</h3>
-                </div>
-                
-            </aside>
-            
-            <div class="flex flex-col gap-5">
-                <h3 class="uppercase font-semibold text-sm text-primary">Servicios legales</h3>
-                <ul>
-                    <ol>Derecho Administrativo</ol>
-                    <ol>Derecho Corporativo</ol>
-                    <ol>Derecho Mercantil</ol>
-                    <ol>Derecho Civil</ol>
-                    <ol>Derecho en Contabilidad</ol>
-                    <ol>Derecho Laboral</ol>
-                    <ol>Derecho Familiar</ol>
-                    <ol>Administración Inmobiliaria</ol>
-                    <ol>Contratos</ol>
-                </ul>
-            </div>
-
-            <aside class="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-                <div class="flex flex-col gap-1">
-                    <h3 class="uppercase font-semibold text-sm  text-primary">Oportunidades de carrera en nuestra firma</h3>
-                    <p>Buscamos profesionales talentosos y dedicados para unirse a nuestra firma</p>
-                </div>
-                <img src="/image_foot.webp" alt="" class="w-full rounded-lg">
-
-                <div class="flex gap-8 items-center">
-                    <div class="">
-                        <h3 class="uppercase font-semibold  text-primary text-xs">Contacto</h3>
-                        <p>Recursos humanos</p>
-                    </div>
-                    <a href="" class="flex px-4 py-1.5 gap-2 text-primary items-center border-2 border-primary rounded-full">
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" /></svg>
-                        5618457366
-                    </a>
-                </div>
-                
-            </aside>
-        </div>
-    </section>
-
-    <section class="bg-primary text-center py-5">
-        <p><strong>RAND®</strong> 2024. Todos los derechos reservados.</p>
-    </section>
-
-    <!-- <section class="py-32 flex items-center justify-center">
-        <div class="mx-6 rounded-xl  flex flex-col gap-10 max-w-screen-xl w-full md:gap-10">
-            <h2 class="uppercase flex flex-col text-center text-2xl lg:text-4xl"><strong class="text-[#2d2e3e] text-center">Conoce todos nuestros</strong> servicios legales</h2>
-
-            <div class="overflow-x-hidden w-full flex justify-center">
-
-                <div class="flex snap-x snap-mandatory overflow-x-scroll scrollbar-hide w-4/5 [&>article]:mr-4">
-
-                    <article class="img__hero flex flex-col min-w-full gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
-                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
-                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-                    
-                    <article class="img__hero flex flex-col min-w-full  gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
-                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
-                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-                    
-                    <article class="img__hero flex flex-col min-w-full  gap-4 items-center justify-center p-7 bg-red-500 text-center text-balance rounded-xl text-white">
-                        <h3 class="font-bold text-2xl">Derecho civíl</h3>
-                        <p class="mb-4 text-base">En derecho civil, contar con un equipo legal que ofrezca soluciones personalizadas es esencial. Nuestros abogados te brindan la orientación y protección que mereces.</p>
-                        <CtaFreeConsulting/>
-                    </article>
-
-                </div>
-            </div>
-        </div>
-    </section> -->
+  
    
 	
 </Layout>
@@ -289,6 +171,46 @@ class="img__hero flex-shrink-0 w-full h-[20rem] snap-center rounded-xl mx-[2.5%]
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+
+
+    @keyframes service-enter {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes service-exit {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.05) translateY(-10px);
+    }
+  }
+
+  ::view-transition-old(service),
+  ::view-transition-new(service) {
+    animation: none;
+    mix-blend-mode: normal;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  ::view-transition-old(service) {
+    animation: service-exit forwards;
+  }
+
+  ::view-transition-new(service) {
+    animation: service-enter forwards;
+  }
 
 
 </style>
