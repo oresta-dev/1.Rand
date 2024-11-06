@@ -33,5 +33,12 @@ const { title } = Astro.props;
 	body {
 		font-family: 'Montserrat Variable', sans-serif;
 	}
+
+	html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 1rem; /* Ajusta según el tamaño de tu navbar */
+        overscroll-behavior: none; /* Previene el scroll bounce en algunos navegadores */
+    }
+
 </style>
 

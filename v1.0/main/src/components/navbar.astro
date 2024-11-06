@@ -1,156 +1,184 @@
 ---
 import CtaFreeConsulting from '@components/ctaFreeConsulting.astro'
 import Telephone from '../Icons/Telephone.astro'
+import DeployMenu from './DeployMenu'
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 w-full py-6 transition-colors duration-300" id="mainNav">
-    <div class="mx-auto px-6">
-      <div class="flex items-center justify-between w-full max-w-screen-xl mx-auto">
+  <div class="mx-auto px-6">
+    <div class="flex items-center justify-between w-full max-w-screen-xl mx-auto">
+      <a href="/">
         <img src="/logo_rand.png" alt="Logo de la empresa" class="h-auto w-40">
-        
-        <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-15 z-40 hidden"></div>
-        
-        <ul id="mobileMenu" class="flex flex-col gap-5 items-center text-white text-[15px] font-semibold fixed top-0 right-[-100%] bg-opacity-10 backdrop-blur-[10.5px] border-l border-[#ffffff3d] bg-[#000000] min-h-screen max-w-[290px] w-[290px] transition-all duration-300 ease-in-out lg:border-none lg:bg-transparent lg:blur-none z-50 lg:static lg:min-h-fit lg:flex-row lg:w-full lg:max-w-max lg:backdrop-blur-0">
-          <li class="mt-44 lg:m-0"><a href="/" class="nav-link hover:text-gray-300">Inicio</a></li>
-          <!-- <li><a href="/services" class="nav-link hover:text-gray-300">Nosotros</a></li> -->
-          <li><a href="#" class="nav-link hover:text-gray-300">Servicios</a></li>
-          <li><a href="#" class="nav-link hover:text-gray-300">Contacto</a></li>
-          <li class="text-sm">
-            <CtaFreeConsulting title="Asesoría gratuita">
-                <Telephone slot='icon'/>
-            </CtaFreeConsulting>
-          </li>
-        </ul>
-
-        
-        
-        <button id="menuToggle" class="z-50 relative w-8 h-8 focus:outline-none lg:hidden">
-          <span class="sr-only">Toggle Menu</span>
-          <div class="block w-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'rotate-45': open, ' -translate-y-1.5': !open }"></span>
-            <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'opacity-0': open } "></span>
-            <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
-          </div>
-        </button>
-      </div>
+      </a>
+      
+      <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-15 z-40 hidden"></div>
+      
+      <ul id="mobileMenu" class="flex flex-col gap-5 items-center text-white text-[15px] font-semibold fixed top-0 right-[-100%] bg-opacity-10 backdrop-blur-[10.5px] border-l border-[#ffffff3d] bg-[#000000] h-screen overflow-y-auto pt-28 pb-10 max-w-[290px] w-[290px] transition-all duration-300 ease-in-out lg:border-none lg:bg-transparent lg:blur-none z-50 lg:static lg:h-auto lg:overflow-visible lg:pt-0 lg:pb-0 lg:flex-row lg:w-full lg:max-w-max lg:backdrop-blur-0">
+        <li class="lg:m-0">
+          <a href="/" class="nav-link mobile-link hover:text-gray-300">Inicio</a>
+        </li>
+        <li class="cursor-pointer">
+          <DeployMenu client:only="react"/>
+        </li>
+        <li>
+          <a href="#Contacto" class="nav-link mobile-link hover:text-gray-300">Contacto</a>
+        </li>
+        <li class="text-sm">
+          <CtaFreeConsulting title="Asesoría gratuita">
+            <Telephone slot='icon'/>
+          </CtaFreeConsulting>
+        </li>
+      </ul>
+      
+      <button id="menuToggle" class="z-50 relative w-8 h-8 focus:outline-none lg:hidden">
+        <span class="sr-only">Toggle Menu</span>
+        <div class="block w-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'rotate-45': open, ' -translate-y-1.5': !open }"></span>
+          <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'opacity-0': open }"></span>
+          <span aria-hidden="true" class="block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+        </div>
+      </button>
     </div>
-  </nav>
-  
-  <script>
-    function setupNavigation() {
-      const nav = document.getElementById('mainNav');
-      const menuToggle = document.getElementById('menuToggle');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const menuOverlay = document.getElementById('menuOverlay');
-      let isOpen = false;
-    
-      function toggleMenu() {
-        isOpen = !isOpen;
-        if (isOpen) {
-          mobileMenu.style.right = '0';
-          menuToggle.classList.add('open');
-          menuOverlay.classList.remove('hidden');
-        } else {
-          mobileMenu.style.right = '-100%';
-          menuToggle.classList.remove('open');
-          menuOverlay.classList.add('hidden');
-        }
+  </div>
+</nav>
+
+<script>
+  function setupNavigation() {
+    const nav = document.getElementById('mainNav');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isOpen = false;
+
+    function toggleMenu() {
+      isOpen = !isOpen;
+      if (isOpen) {
+        mobileMenu.style.right = '0';
+        menuToggle.classList.add('open');
+        menuOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Previene el scroll cuando el menú está abierto
+      } else {
+        mobileMenu.style.right = '-100%';
+        menuToggle.classList.remove('open');
+        menuOverlay.classList.add('hidden');
+        document.body.style.overflow = ''; // Restaura el scroll
       }
-    
-      menuToggle.addEventListener('click', toggleMenu);
-    
-      menuOverlay.addEventListener('click', (event) => {
-        if (event.target === menuOverlay) {
+    }
+
+    // Cerrar menú al hacer click en enlaces
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen) {
           toggleMenu();
         }
       });
-    
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && isOpen) {
-          toggleMenu();
-        }
-      });
-    
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-          nav.classList.add('bg-secondary');
-        } else {
-          nav.classList.remove('bg-secondary');
-        }
-      });
-    }
-
-    function updateActiveLink() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const currentPath = window.location.pathname;
-
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-
-    // Ejecutar setupNavigation y updateActiveLink al cargar la página
-    document.addEventListener('astro:page-load', () => {
-      setupNavigation();
-      updateActiveLink();
     });
 
-    // Ejecutar updateActiveLink después de cada navegación
-    document.addEventListener('astro:after-swap', updateActiveLink);
-  </script>
-  
-  <style>
-    .bg-[#2e313e] {
-      background-color: #2e313e;
-    }
-  
-    #menuToggle span:first-child {
-      transform: translateY(-6px);
-    }
-  
-    #menuToggle span:last-child {
-      transform: translateY(6px);
-    }
-  
-    #menuToggle.open span:first-child {
-      transform: rotate(45deg);
-    }
-  
-    #menuToggle.open span:nth-child(2) {
-      opacity: 0;
-    }
-  
-    #menuToggle.open span:last-child {
-      transform: rotate(-45deg);
-    }
+    // Toggle del menú móvil
+    menuToggle.addEventListener('click', toggleMenu);
 
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
+    // Cerrar al hacer click en el overlay
+    menuOverlay.addEventListener('click', (event) => {
+      if (event.target === menuOverlay) {
+        toggleMenu();
+      }
+    });
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #FAC800;
-      opacity: 1px;
-      transition: width 0.3s ease;
-    }
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && isOpen) {
+        toggleMenu();
+      }
+    });
 
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
+    // Cambiar color del navbar al hacer scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        nav.classList.add('bg-secondary');
+      } else {
+        nav.classList.remove('bg-secondary');
+      }
+    });
+  }
 
-    .nav-link.active {
-      color: #ffffff;
+  function updateActiveLink() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Ejecutar setupNavigation y updateActiveLink al cargar la página
+  document.addEventListener('astro:page-load', () => {
+    setupNavigation();
+    updateActiveLink();
+  });
+
+  // Ejecutar updateActiveLink después de cada navegación
+  document.addEventListener('astro:after-swap', updateActiveLink);
+</script>
+
+<style>
+  .bg-secondary {
+    background-color: #2e313e;
+  }
+
+  #menuToggle span:first-child {
+    transform: translateY(-6px);
+  }
+
+  #menuToggle span:last-child {
+    transform: translateY(6px);
+  }
+
+  #menuToggle.open span:first-child {
+    transform: rotate(45deg) translateY(0);
+  }
+
+  #menuToggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuToggle.open span:last-child {
+    transform: rotate(-45deg) translateY(0);
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #FAC800;
+    opacity: 1;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #ffffff;
+  }
+
+  @media (max-width: 1024px) {
+    body.menu-open {
+      overflow: hidden;
     }
-  </style>
+  }
+</style>
