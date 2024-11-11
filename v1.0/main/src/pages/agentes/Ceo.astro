@@ -4,8 +4,11 @@ import LayoutDT from "@layouts/LayoutDT.astro";
 
 <LayoutDT title="Rand | CEO">    
     <main class="fixed inset-0 flex items-center justify-center bg-secondary">
-        <div class="w-full max-w-[420px] mx-auto px-6">
-            <article class="bg-white rounded-2xl relative">
+        <div class="perspective w-full max-w-[420px] mx-auto px-6 ">
+            <div class="card-container relative transition-transform duration-700 transform-style-preserve-3d">
+
+          
+            <article class="card-front bg-white rounded-2xl relative backface-hidden">
                 <header class="w-full flex items-center justify-center flex-col relative">
                     <img 
                         src="/bg_digital_card.png" 
@@ -96,6 +99,113 @@ import LayoutDT from "@layouts/LayoutDT.astro";
                     </div>
                 </div>
             </article>
+
+            <article class="card-back bg-white rounded-2xl absolute inset-0 backface-hidden rotate-y-180">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-secondary mb-4">Información Adicional</h2>
+                    <!-- Contenido del reverso -->
+                </div>
+            </article>
         </div>
+    </div>
     </main>
+
+    <style>
+        .perspective {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .transform-style-preserve-3d {
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+    
+        .card-container {
+            transition: transform 0.05s linear;
+            transform-origin: center center;
+        }
+    </style>
+      
+      <script>
+      import { gsap } from 'gsap';
+      
+      document.addEventListener('DOMContentLoaded', () => {
+    let isFlipped = false;
+    const cardContainer = document.querySelector('.card-container');
+    const mainContainer = document.querySelector('main');
+
+    if (!cardContainer || !mainContainer) return;
+
+    // Detectar el gesto de swipe
+    let startX = 0;
+    let startY = 0;
+
+    mainContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+
+    mainContainer.addEventListener('touchend', (e) => {
+        const diffX = startX - e.changedTouches[0].clientX;
+        const diffY = startY - e.changedTouches[0].clientY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            flipCard();
+        }
+    });
+
+    function flipCard() {
+        isFlipped = !isFlipped;
+        
+        gsap.to(cardContainer, {
+            rotationY: isFlipped ? -180 : 0,
+            duration: 0.5,
+            ease: "power2.inOut",
+            transformPerspective: 1000,
+            transformStyle: "preserve-3d"
+        });
+    }
+
+    // Efecto hover 3D
+    mainContainer.addEventListener('mousemove', (e) => {
+        if (!isFlipped) {
+            const rect = cardContainer.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const xAxis = (centerX - e.clientX) / 25;
+            const yAxis = (centerY - e.clientY) / 25;
+            
+            gsap.to(cardContainer, {
+                rotationY: xAxis,
+                rotationX: -yAxis,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        }
+    });
+
+    // Resetear posición
+    mainContainer.addEventListener('mouseleave', () => {
+        if (!isFlipped) {
+            gsap.to(cardContainer, {
+                rotationY: 0,
+                rotationX: 0,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        }
+    });
+});
+      </script>
 </LayoutDT>
