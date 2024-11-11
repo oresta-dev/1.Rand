@@ -9,7 +9,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO ADMINISTRATIVO",
-            description: "Te ayudamos a proteger tu patrimonio previniendo riesgos que pueden afectar en costosas multas. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley garantizando tu tranquilidad y crecimiento empresarial.",
+            description: "Te ayudamos a proteger tu patrimonio previniendo riesgos que podrían derivar en costosos juicios. Nos comprometemos a cuidar tus intereses de manera responsable y con total apego a la ley, garantizando tu tranquilidad y seguridad financiera.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -37,7 +37,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO CORPORATIVO",
-            description: "Atención personalizada y especialización para tu empresa por personas, con la finalidad de evitar juicios, por lo que sentimos por dichas ciencias de nuestro derecho.",
+            description: "Asistimos a nuestros clientes en la prevención de riesgos patrimoniales, con la finalidad de evitar juicios, por lo que velamos por dichos intereses de nuestros clientes de una manera responsable y apegada al derecho.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -50,13 +50,13 @@ export const Services = [
                 "Representación Legal de las Sociedades",
                 "Libros Corporativos",
                 "Gobierno Corporativo",
-                "Licencias de Socios y Accionistas",
+                "Blindaje de Socios y Accionistas",
                 "Aviso de Privacidad", 
                 "Liquidación de Sociedades",
                 "Preparamos Títulos Accionarios",
                 "Derechos De Autor",
-                "Legalización y Apostillas",
-                "Asistencia a nuestra clientes en fusiones, escisiones y transformaciones"
+                "Regularizamos y actualizamos documentación corporativa",
+                "Asesoramos a nuestros clientes en fusiones, escisiones y transformaciones"
             ],
             url_img: ''
         }
@@ -71,7 +71,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO MERCANTIL",
-            description: "Te ayudamos a gestionar de manera segura y eficiente todos los asuntos legales de tu negocio para que tomes las mejores especializadas siempre que cada transacción comercial sea realizada con las mejores prácticas claras y efectivas para que tu negocio crezca y opere con tranquilidad y confianza.",
+            description: "Te ayudamos a gestionar de manera segura y eficiente las relaciones y actividades comerciales. Nuestro servicio especializado asegura que cada transacción esté legalmente respaldada, ofreciendo soluciones claras y efectivas para que tu negocio crezca y opere con tranquilidad y confianza.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -99,7 +99,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO CIVIL",
-            description: "Te ofrecemos una protección integral de tus derechos y obligaciones desde el momento de tu contratación hasta tu fallecimiento. Nos encargaremos de cuidar toda clase de controversias derivadas de obligaciones personales hasta la gestión de bienes, sucesiones, herencias, entre otros. Tu patrimonio siempre está cuidado para tu tranquilidad.",
+            description: "Te ofrecemos una protección integral de tus derechos y obligaciones desde el momento de tu concepción hasta tu fallecimiento. Nos encargamos de cubrir todos los aspectos importantes, desde tus relaciones personales hasta la gestión de bienes, sucesiones, obligaciones y contratos, asegurando que cada detalle esté cuidado para tu tranquilidad.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -109,7 +109,7 @@ export const Services = [
             services: [
                 "Juicios familiares (De proceso oral y escrito) como: Parte actora o parte demandada y en cualquier etapa procesal del juicio",
                 "Juicios contenciosos que versen sobre la propiedad y goce de bienes inmuebles",
-                "Juicios contenciosos sobre derechos personales de arrendamiento, usufructo, servidumbre, posesión provisional, evicción, donación, mutuo, etc.",
+                "Juicios contenciosos sobre derechos personales de naturaleza civil (comodato, arrendamiento, usufructo, prestación de servicios, mandato, cesión, donación, mutuo, etc.)",
                 "Medios preparatorios a juicio, providencias precautorias, vía de apremio, concursos, entre otros",
                 "Recursos en Materia Civil (Revocación, Queja y/o Apelación)",
                 "Juicio de Amparo en Materia Civil (Directo o Indirecto)",
@@ -127,7 +127,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO FAMILIAR",
-            description: "Nuestro servicio de derecho de familia se enfoca en las necesidades de cada núcleo familiar que nos confía su familia y a cada uno de sus miembros. Te brindamos el respaldo legal que necesitas para resolver tus conflictos familiares y garantizamos confidencialidad, estabilidad y bienestar de los tuyos.",
+            description: "Nuestro servicio de derecho de familia se enfoca en las normativas de orden público y social que protegen a la familia y a cada uno de sus miembros. Te brindamos el respaldo legal que necesitas para resolver tus conflictos familiares y proteger tus derechos; asegurando la estabilidad y bienestar de los tuyos.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -136,11 +136,11 @@ export const Services = [
             title: "SOLUCIONES ESPECIALIZADAS EN DERECHO FAMILIAR",
             services: [
                 "Parte actora o demandada y en cualquier etapa procesal del juicio",
-                "Rectificación, Modificación y Nulificación de acta del registro en actas",
+                "Rectificación, Modificación y Aclaración ante el Registro Civil en Actas",
                 "Matrimonios Nulos e Ilícitos",
                 "Divorcios",
                 "Reconocimiento de Hijos / Patria Potestad",
-                "Alimentos (Para hijos, cónyuges, concubinos o ascendientes, Pensiones Alimenticias, etc.)",
+                "Alimentos (Para hijos, cónyuges, concubina o concubinario) y Registro de Deudores Alimentarios Morosos",
                 "Guarda y Custodia de hijos / Régimen de Visitas y Convivencias",
                 "Violencia Familiar",
                 "Adopción",
@@ -162,7 +162,7 @@ export const Services = [
         },
         Descripcion: {
             title: "DERECHO LABORAL",
-            description: "Ofrecemos un marco legal robusto que optimiza la relación entre empleados y empleadores, asegurando un ambiente laboral productivo. Además de que nos vamos el cumplimiento efectivo de los requerimientos legales y las obligaciones, garantizar un entorno laboral justo y productivo, impulsando tu empresa.",
+            description: "Ofrecemos un marco legal robusto que optimiza la relación entre empleados y empleadores, asegurando tanto el desarrollo personal y profesional de tu equipo como el cumplimiento efectivo de sus responsabilidades. Con nuestras soluciones, garantizas un entorno laboral justo y productivo, impulsando tu éxito.",
             buttonText: "Solicita tu asesoría GRATUITA",
             url_img_1: '',
             url_img_2: '',
@@ -198,17 +198,16 @@ export const Services = [
             services: [
                 "Contabilidad General",
                 "Regularización de la Contabilidad",
-                "Contabilidad para personas físicas y morales",
+                "Declaración Anual para personas físicas y morales",
                 "Análisis de XML del ejercicio fiscal",
-                "Determinación de Diferencias de Factura emitidas y recibidas",
-                "Relación con los SAT",
-                "EDOS y Validación Electrónica",
-                "Persona física y persona moral",
-                "Generación de certificado de sello digital (CSD)",
-                "Altas en SAT (PFD persona física, persona moral)",
-                "Constancia Actualización y verificación de obligaciones",
-                "Estatus de opiñion",
-                "Solicitud de devolución de saldo a favor"
+                "Determinación de Diferencias de Facturas emitidas y recibidas",
+                "Relación con lista 69B operaciones simuladas (EFOS-EDOS)",
+                "Facturación Electrónica (persona física y persona moral)",
+                "Generación de certificados de sello digital (CSD)",
+                "Altas en SAT, IMSS (persona física, persona moral)",
+                "Generación, Actualización y revocación de Fiel",
+                "Maquila de nómina",
+                "Solicitud de devolución de saldos a favor"
             ],
             url_img: ''
         }
@@ -264,14 +263,14 @@ export const Services = [
         Soluciones: {
             title: "SOLUCIONES ESPECIALIZADAS EN ADMINISTRACIÓN INMOBILIARIA",
             services: [
-                "Administración de propiedad individual",
-                "Asesoría en la compra, venta o alquiler de un inmueble",
-                "Trámites de gestoría con la diferentes instituciones gubernamentales y empresas de servicios",
-                "Cobranza de pagos referentes a mantenimiento, cuotas, servicios, impuestos, los servicios que se necesiten pagar y los gastos de mantenimiento",
-                "Gestión ante notaría",
-                "Servicio de Avalúos",
-                "Regularización de inmuebles"
-            ],
+                "Administración Inmobiliaria",
+                "Asesorar en la compra, venta o alquiler de un inmueble",
+                "Tramites de gestoría con la diferentes instituciones gubernamentales y empresas de servicios",
+                "Gestiona los pagos referentes a la propiedad, como la hipoteca, los impuestos, los servicios públicos, el seguro y los gastos de mantenimiento",
+                "Gestión ante notaria",
+                "Servicio de Avalúos", 
+                "Regularización de Inmuebles"
+             ],
             url_img: ''
         }
     }
