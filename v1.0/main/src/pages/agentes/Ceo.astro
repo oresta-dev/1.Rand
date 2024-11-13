@@ -3,12 +3,13 @@ import LayoutDT from "@layouts/LayoutDT.astro";
 ---
 
 <LayoutDT title="Rand | CEO">    
-    <main class=" flex items-center justify-center bg-yellow-500 min-h-svh">
+    <main class=" flex items-center justify-center min-h-svh">
         <div class="perspective  w-full max-w-[420px] mx-auto px-6 ">
             <div class="card-container relative transition-transform duration-700 transform-style-preserve-3d">
 
           
             <article class="card-front bg-white rounded-2xl relative backface-hidden">
+                <img src="/logo_rand_variant.webp" alt="" class="absolute z-[10] w-14 top-3 right-3">
                 <header class="w-full flex items-center justify-center flex-col relative">
                     <img 
                         src="/bg_digital_card.png" 
@@ -100,11 +101,47 @@ import LayoutDT from "@layouts/LayoutDT.astro";
                 </div>
             </article>
 
+            
             <article class="card-back bg-white rounded-2xl absolute inset-0 backface-hidden rotate-y-180">
-                <div class="p-6">
-                    <h2 class="text-xl font-bold text-secondary mb-4">Información Adicional</h2>
-                    <!-- Contenido del reverso -->
+                <img src="/logo_rand_variant.webp" alt="" class="absolute z-[10] w-14 top-3 right-3">
+                <div class="flex flex-col absolute bottom-5 right-3 gap-3">
+                    <h2 class="font-bold text-sm relative text-end">Nuestra Unión es tu solución</h2>
+                    <div class="flex items-center justify-end gap-3">
+                       <div class="bg-[#2e313e] w-0.5 bg-opacity-30 h-[55px]"></div>
+                       <div class="">
+                        <h3 class="text-[10px] font-bold">Lic. Josué Alejandro Luna Monroy</h3>
+                        <p class="text-[8px] font-semibold text-[#353535]">Director Ejecutivo</p>
+                       </div>
+                    </div>
                 </div>
+
+                <header class="w-full flex items-center justify-center flex-col relative">
+                    <img 
+                        src="/bg_digital_card.png" 
+                        class="w-full h-[165px] object-cover rounded-tl-2xl rounded-tr-2xl" 
+                        alt=""
+                    >
+                    <div class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full">
+                        <img 
+                            src="/lic_Luna.webp" 
+                            class="w-[130px] h-[130px] object-cover" 
+                            alt=""
+                        >
+                    </div>
+                </header>
+
+                <div class="pt-[5.8rem] pb-2 px-6 flex flex-col items-center justify-center gap-5">
+                    <img src="/QR.webp" alt="" class="w-40">
+                </div>
+
+                <div class="hidden absolute bottom-[2rem] left-[-2.5rem] xs:flex items-center justify-center p-4 bg-secondary border-[2.5px] border-white rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="#ffffff" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5" />
+                    </svg>
+                </div>
+
+             
             </article>
         </div>
         </div>
