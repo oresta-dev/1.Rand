@@ -8,7 +8,7 @@ const contactInfo = {
     website: "https://rand.com.mx",
     address: "Goethe 24 col. Anzures C.Z 11590 CDMX Alcaldía Miguel Hidalgo",
     linkedin: "https://www.linkedin.com/company/rand",
-    whatsapp: "+52NUMERODETELEFONO", // Reemplazar con el número real
+    whatsapp: "//wa.me/525512950770", // Reemplazar con el número real
     maps: "https://www.google.com/maps/dir//Goethe+24,+Anzures,+Miguel+Hidalgo,+11590+Ciudad+de+México,+CDMX/@19.4289681,-99.2167453,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x85d1ff4cfafa0a5d:0x99b2a59a86c443a4!2m2!1d-99.1755454!2d19.4289727!3e0?entry=ttu&g_ep=EgoyMDI0MTExMS4wIKXMDSoASAFQAw%3D%3D",
     company: "Rand - Despacho de abogados",
 };
@@ -33,11 +33,14 @@ const contactInfo = {
                                 class="w-full h-[165px] object-cover rounded-tl-2xl rounded-tr-2xl"
                                 alt=""
                             />
-                            <img
-                                src="/logo_rand_variant.webp"
-                                alt=""
-                                class="absolute w-14 top-3 right-3"
-                            />
+                            <a 
+                                class="absolute w-16 top-3 right-3 "
+                                href=`${contactInfo.website}`>
+                                <img
+                                    src="/logo_rand_variant.webp"
+                                    alt=""
+                                />
+                            </a>
                             <div
                                 class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full"
                             >
@@ -222,7 +225,8 @@ const contactInfo = {
                                 </p>
                             </div>
 
-                            <div
+                            <a
+                                href=`${contactInfo.whatsapp}`
                                 class="hidden absolute xss:bottom-[5rem] xss:right-[-.9rem] xss:p-3 xs:bottom-[2rem] xs:right-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full"
                             >
                                 <div class="xss:w-9 xs:w-[50px]">
@@ -243,7 +247,7 @@ const contactInfo = {
                                         ></path>
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -261,11 +265,14 @@ const contactInfo = {
                                 class="w-full h-[165px] object-cover relative rounded-tl-2xl rounded-tr-2xl"
                                 alt=""
                             />
-                            <img
-                                src="/logo_rand_variant.webp"
-                                alt=""
-                                class="absolute w-14 top-3 right-3"
-                            />
+                            <a 
+                                class="absolute w-16 top-3 right-3 "
+                                href=`${contactInfo.website}`>
+                                <img
+                                    src="/logo_rand_variant.webp"
+                                    alt=""
+                                />
+                            </a>
                             <div
                                 class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full"
                             >
@@ -307,7 +314,8 @@ const contactInfo = {
                             </div>
                         </div>
 
-                        <div
+                        <a
+                            href=`${contactInfo.whatsapp}`
                             class="hidden absolute xss:bottom-[2rem] xss:left-[-1.5rem] xss:p-3 xs:bottom-[2rem] xs:left-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full"
                         >
                             <div class="xss:w-9 xs:w-[50px]">
@@ -328,7 +336,7 @@ const contactInfo = {
                                     ></path>
                                 </svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </article>
             </div>
@@ -336,6 +344,7 @@ const contactInfo = {
     </main>
 </LayoutDT>
 <style>
+    
     .perspective {
         perspective: 1000px;
         transform-style: preserve-3d;
