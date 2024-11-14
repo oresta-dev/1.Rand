@@ -10,7 +10,8 @@ import LayoutDT from "@layouts/LayoutDT.astro";
           
             <!-- card front -->
             <article class="card-front bg-white rounded-2xl relative backface-hidden">
-                <img src="/logo_rand_variant.webp" alt="" class="absolute z-[1] w-14 top-3 right-3">
+                <img src="/logo_rand_variant.webp" alt="" class="absolute z-[10] w-14 top-3 right-3">
+
                 <header class="w-full flex items-center justify-center flex-col relative">
                     <img 
                         src="/bg_digital_card.png" 
@@ -112,7 +113,7 @@ import LayoutDT from "@layouts/LayoutDT.astro";
                 <header class="w-full flex items-center justify-center flex-col relative">
                     <img 
                         src="/bg_digital_card.png" 
-                        class="w-full h-[165px] object-cover relative z-[129] rounded-tl-2xl rounded-tr-2xl" 
+                        class="w-full h-[165px] object-cover relative z-[9] rounded-tl-2xl rounded-tr-2xl" 
                         alt=""
                     >
                     <div class="absolute bottom-[-4.5em] bg-white p-1.5 z-[10] rounded-full">
@@ -165,17 +166,7 @@ import LayoutDT from "@layouts/LayoutDT.astro";
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
         }
-
-        .card-front img {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-
-        .card-front, .card-back {
-          
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
+        
         
         .backface-hidden {
             backface-visibility: hidden;
