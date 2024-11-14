@@ -1,291 +1,490 @@
 ---
 import LayoutDT from "@layouts/LayoutDT.astro";
+
+const contactInfo = {
+    name: "Lic. Josué Alejandro Luna Monroy",
+    title: "Director Ejecutivo",
+    email: "jaluna@rand.com.mx",
+    website: "https://rand.com.mx",
+    address: "Goethe 24 col. Anzures C.Z 11590 CDMX Alcaldía Miguel Hidalgo",
+    linkedin: "https://www.linkedin.com/company/rand",
+    whatsapp: "+52NUMERODETELEFONO", // Reemplazar con el número real
+    maps: "https://www.google.com/maps/dir//Goethe+24,+Anzures,+Miguel+Hidalgo,+11590+Ciudad+de+México,+CDMX/@19.4289681,-99.2167453,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x85d1ff4cfafa0a5d:0x99b2a59a86c443a4!2m2!1d-99.1755454!2d19.4289727!3e0?entry=ttu&g_ep=EgoyMDI0MTExMS4wIKXMDSoASAFQAw%3D%3D",
+    company: "Rand - Despacho de abogados",
+};
 ---
 
-<LayoutDT title="Rand | CEO">    
-    <main class=" flex items-center justify-center min-h-svh">
-        <div class="perspective  w-full max-w-[420px] mx-auto px-6 ">
-            <div class="card-container relative transition-transform duration-700 transform-style-preserve-3d">
-
-          
-            <!-- card front -->
-            <article class="card-front bg-white rounded-2xl relative backface-hidden">
-                <div class="relative h-full w-full">
-                    
-                    <header class="w-full flex items-center justify-center flex-col relative">
-                        <img 
-                        src="/bg_digital_card.png" 
-                        class="w-full h-[165px] object-cover rounded-tl-2xl rounded-tr-2xl" 
-                        alt=""
+<LayoutDT title="Rand | CEO">
+    <main class="flex items-center justify-center min-h-svh">
+        <div class="perspective w-full max-w-[420px] mx-auto px-6">
+            <div
+                class="card-container relative transition-transform duration-700 transform-style-preserve-3d"
+            >
+                <!-- card front -->
+                <article
+                    class="lg:card-front bg-white rounded-2xl relative backface-hidden"
+                >
+                    <div class="relative h-full w-full">
+                        <header
+                            class="w-full flex items-center justify-center flex-col relative"
                         >
-                        <img src="/logo_rand_variant.webp" alt="" class="absolute w-14 top-3 right-3">
-                        <div class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full">
-                            <img 
-                                src="/lic_Luna.webp" 
-                                class="w-[130px] h-[130px] object-cover" 
+                            <img
+                                src="/bg_digital_card.png"
+                                class="w-full h-[165px] object-cover rounded-tl-2xl rounded-tr-2xl"
                                 alt=""
+                            />
+                            <img
+                                src="/logo_rand_variant.webp"
+                                alt=""
+                                class="absolute w-14 top-3 right-3"
+                            />
+                            <div
+                                class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full"
                             >
-                        </div>
-                    </header>
-    
-                    <div class="pt-[4.5rem] pb-2 px-6 flex flex-col gap-5">
-                        <div class="text-center">
-                            <h1 class="font-bold text-secondary text-lg">Lic. Josué Alejandro Luna Monroy</h1>
-                            <p class="font-semibold text-sm text-[#49494D]">Director Ejecutivo</p>
-                        </div>
-    
-                        <div class="flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                                    <path d="M3 7l9 6l9 -6" />
-                                </svg>
-                                <p class="font-semibold text-[13px]">jaluna@rand.com.mx</p>
+                                <img
+                                    src="/lic_Luna.webp"
+                                    class="w-[130px] h-[130px] object-cover"
+                                    alt=""
+                                />
                             </div>
-                            
-                            <div class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e3140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-world-www">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <path d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4" />
-                                    <path d="M11.5 3a16.989 16.989 0 0 0 -1.826 4" />
-                                    <path d="M12.5 3a16.989 16.989 0 0 1 1.828 4" />
-                                    <path d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4" />
-                                    <path d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4" />
-                                    <path d="M12.5 21a16.989 16.989 0 0 0 1.828 -4" />
-                                    <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4" />
-                                    <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4" />
-                                    <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4" />
-                                </svg>
-                                <p class="font-semibold text-[13px]">rand.com.mx</p>
+                        </header>
+
+                        <div class="pt-[4.5rem] pb-2 px-6 flex flex-col gap-5">
+                            <div class="text-center">
+                                <h1 class="font-bold text-secondary text-lg">
+                                    Lic. Josué Alejandro Luna Monroy
+                                </h1>
+                                <p class="font-semibold text-sm text-[#49494D]">
+                                    Director Ejecutivo
+                                </p>
                             </div>
-    
-                            <div class="flex items-center gap-2">
-                                <div class="min-w-[24px] min-h-[24px]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#2e3140" class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                        <path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" />
+
+                            <div class="flex flex-col gap-3">
+                                <a
+                                    href="mailto:@correo.com"
+                                    class="flex items-center gap-2"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#2e3140"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-mail"
+                                    >
+                                        <path
+                                            stroke="none"
+                                            d="M0 0h24v24H0z"
+                                            fill="none"></path>
+                                        <path
+                                            d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                                        ></path>
+                                        <path d="M3 7l9 6l9 -6"></path>
                                     </svg>
-                                </div>
-                                <p class="font-semibold text-[13px] text-balance">Goethe 24 col. Anzures C.Z 11590 CDMX Alcaldiá Miguel Hidalgo</p>
-                            </div>
-                        </div>
-    
-                        <div class="flex flex-col gap-5">
-                            <div>
-                                <strong class="text-xs">Redes sociales</strong>
-                                <div class="flex items-center gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#2e3140" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-linkedin">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                        <path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5zm-9 8a1 1 0 0 0 -1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0 -1 -1m6 0a3 3 0 0 0 -1.168 .236l-.125 .057a1 1 0 0 0 -1.707 .707v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0 -3 -3m-6 -3a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" />
+                                    <p class="font-semibold text-[13px]">
+                                        jaluna@rand.com.mx
+                                    </p>
+                                </a>
+
+                                <a href=`${contactInfo.website}` class="flex items-center gap-2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#2e3140"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-world-www"
+                                    >
+                                        <path
+                                            stroke="none"
+                                            d="M0 0h24v24H0z"
+                                            fill="none"></path>
+                                        <path
+                                            d="M19.5 7a9 9 0 0 0 -7.5 -4a8.991 8.991 0 0 0 -7.484 4"
+                                        ></path>
+                                        <path
+                                            d="M11.5 3a16.989 16.989 0 0 0 -1.826 4"
+                                        ></path>
+                                        <path
+                                            d="M12.5 3a16.989 16.989 0 0 1 1.828 4"
+                                        ></path>
+                                        <path
+                                            d="M19.5 17a9 9 0 0 1 -7.5 4a8.991 8.991 0 0 1 -7.484 -4"
+                                        ></path>
+                                        <path
+                                            d="M11.5 21a16.989 16.989 0 0 1 -1.826 -4"
+                                        ></path>
+                                        <path
+                                            d="M12.5 21a16.989 16.989 0 0 0 1.828 -4"
+                                        ></path>
+                                        <path d="M2 10l1 4l1.5 -4l1.5 4l1 -4"
+                                        ></path>
+                                        <path d="M17 10l1 4l1.5 -4l1.5 4l1 -4"
+                                        ></path>
+                                        <path d="M9.5 10l1 4l1.5 -4l1.5 4l1 -4"
+                                        ></path>
                                     </svg>
-                                    <div class="xss:hidden">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#2e3140" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                            <path d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5" />
+                                    <p class="font-semibold text-[13px]">
+                                        rand.com.mx
+                                    </p>
+                                </a>
+
+                                <a href=`${contactInfo.maps}` class="flex items-center gap-2">
+                                    <div class="min-w-[24px] min-h-[24px]">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="#2e3140"
+                                            class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"
+                                        >
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none"></path>
+                                            <path
+                                                d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
+                                            ></path>
                                         </svg>
                                     </div>
+                                    <p
+                                        class="font-semibold text-[13px] text-balance"
+                                    >
+                                        Goethe 24 col. Anzures C.Z 11590 CDMX
+                                        Alcaldiá Miguel Hidalgo
+                                    </p>
+                                </a>
+                            </div>
+
+                            <div class="flex flex-col gap-5">
+                                <div>
+                                    <strong class="text-xs"
+                                        >Redes sociales</strong
+                                    >
+                                    <div class="flex items-center gap-3">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="#2e3140"
+                                            class="icon icon-tabler icons-tabler-filled icon-tabler-brand-linkedin"
+                                        >
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none"></path>
+                                            <path
+                                                d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5zm-9 8a1 1 0 0 0 -1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0 -1 -1m6 0a3 3 0 0 0 -1.168 .236l-.125 .057a1 1 0 0 0 -1.707 .707v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0 -3 -3m-6 -3a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1"
+                                            ></path>
+                                        </svg>
+                                        <div class="xss:hidden">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="#2e3140"
+                                                class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp"
+                                            >
+                                                <path
+                                                    stroke="none"
+                                                    d="M0 0h24v24H0z"
+                                                    fill="none"></path>
+                                                <path
+                                                    d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5"
+                                                ></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    id="saveContact"
+                                    class="rounded-2xl w-fit px-4 py-1.5 bg-secondary uppercase text-sm font-medium mx-auto text-white sm:max-w-[60%]"
+                                >
+                                    Guardar contacto
+                                </button>
+
+                                <p
+                                    class="font-extrabold text-[10px] uppercase text-center"
+                                >
+                                    Despacho de abogados
+                                </p>
+                            </div>
+
+                            <div
+                                class="hidden absolute xss:bottom-[5rem] xss:right-[-.9rem] xss:p-3 xs:bottom-[2rem] xs:right-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full"
+                            >
+                                <div class="xss:w-9 xs:w-[50px]">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="auto"
+                                        height="auto"
+                                        viewBox="0 0 24 24"
+                                        fill="#ffffff"
+                                        class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp"
+                                    >
+                                        <path
+                                            stroke="none"
+                                            d="M0 0h24v24H0z"
+                                            fill="none"></path>
+                                        <path
+                                            d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5"
+                                        ></path>
+                                    </svg>
                                 </div>
                             </div>
-    
-                            <button class="rounded-2xl w-fit px-4 py-1.5 bg-secondary uppercase text-sm font-medium mx-auto text-white sm:max-w-[60%]">
-                                Guardar contacto
-                            </button>
-    
-                            <p class="font-extrabold text-[10px] uppercase text-center">Despacho de abogados</p>
                         </div>
-    
-                        <div class="hidden absolute xss:bottom-[5rem] xss:right-[-.9rem] xss:p-3  xs:bottom-[2rem] xs:right-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full">
+                    </div>
+                </article>
+
+                <!-- Card back -->
+                <article
+                    class="lg:card-back bg-white rounded-2xl absolute inset-0 backface-hidden rotate-y-180"
+                >
+                    <div class="relative h-full w-full">
+                        <header
+                            class="w-full flex items-center justify-center flex-col relative"
+                        >
+                            <img
+                                src="/bg_digital_card.png"
+                                class="w-full h-[165px] object-cover relative rounded-tl-2xl rounded-tr-2xl"
+                                alt=""
+                            />
+                            <img
+                                src="/logo_rand_variant.webp"
+                                alt=""
+                                class="absolute w-14 top-3 right-3"
+                            />
+                            <div
+                                class="absolute bottom-[-4.5em] bg-white p-1.5 rounded-full"
+                            >
+                                <img
+                                    src="/lic_Luna.webp"
+                                    class="w-[130px] h-[130px] object-cover relative"
+                                    alt=""
+                                />
+                            </div>
+                        </header>
+
+                        <div
+                            class="pt-[5.8rem] pb-2 px-6 flex flex-col items-center justify-center gap-5"
+                        >
+                            <img src="/QR.webp" alt="" class="w-40" />
+                        </div>
+
+                        <div
+                            class="flex flex-col absolute bottom-5 right-3 gap-3"
+                        >
+                            <h2 class="font-bold text-sm relative text-end">
+                                Nuestra Unión es tu solución
+                            </h2>
+                            <div class="flex items-center justify-end gap-3">
+                                <div
+                                    class="bg-[#2e313e] w-0.5 bg-opacity-30 h-[55px]"
+                                >
+                                </div>
+                                <div class="">
+                                    <h3 class="text-[10px] font-bold">
+                                        Lic. Josué Alejandro Luna Monroy
+                                    </h3>
+                                    <p
+                                        class="text-[8px] font-semibold text-[#353535]"
+                                    >
+                                        Director Ejecutivo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="hidden absolute xss:bottom-[2rem] xss:left-[-1.5rem] xss:p-3 xs:bottom-[2rem] xs:left-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full"
+                        >
                             <div class="xss:w-9 xs:w-[50px]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 24 24" fill="#ffffff" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                    <path d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5" />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="auto"
+                                    height="auto"
+                                    viewBox="0 0 24 24"
+                                    fill="#ffffff"
+                                    class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"></path>
+                                    <path
+                                        d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5"
+                                    ></path>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-
-            <!-- Card back -->
-            <article class="card-back bg-white rounded-2xl absolute inset-0 backface-hidden rotate-y-180">
-                <div class="relative h-full w-full">
-                    
-                    
-                    <header class="w-full flex items-center justify-center flex-col relative">
-                        <img 
-                        src="/bg_digital_card.png" 
-                        class="w-full h-[165px] object-cover relative  rounded-tl-2xl rounded-tr-2xl" 
-                        alt=""
-                        >
-                        <img src="/logo_rand_variant.webp" alt="" class="absolute  w-14 top-3 right-3">
-                        <div class="absolute bottom-[-4.5em] bg-white p-1.5  rounded-full">
-                            <img 
-                                src="/lic_Luna.webp" 
-                                class="w-[130px] h-[130px] object-cover relative " 
-                                alt=""
-                            >
-                        </div>
-                    </header>
-    
-                    <div class="pt-[5.8rem] pb-2 px-6 flex flex-col items-center justify-center gap-5">
-                        <img src="/QR.webp" alt="" class="w-40">
-                    </div>
-    
-                    <div class="flex flex-col absolute bottom-5 right-3 gap-3">
-                        <h2 class="font-bold text-sm relative text-end">Nuestra Unión es tu solución</h2>
-                        <div class="flex items-center justify-end gap-3">
-                           <div class="bg-[#2e313e] w-0.5 bg-opacity-30 h-[55px]"></div>
-                           <div class="">
-                            <h3 class="text-[10px] font-bold">Lic. Josué Alejandro Luna Monroy</h3>
-                            <p class="text-[8px] font-semibold text-[#353535]">Director Ejecutivo</p>
-                           </div>
-                        </div>
-                    </div>
-    
-                    <div class="hidden absolute xss:bottom-[2rem] xss:left-[-1.5rem] xss:p-3  xs:bottom-[2rem] xs:left-[-2.5rem] xss:flex items-center justify-center xs:p-4 bg-secondary border-[2.5px] border-white rounded-full">
-                        <div class="xss:w-9 xs:w-[50px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" viewBox="0 0 24 24" fill="#ffffff" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-whatsapp">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M18.497 4.409a10 10 0 0 1 -10.36 16.828l-.223 -.098l-4.759 .849l-.11 .011a1 1 0 0 1 -.11 0l-.102 -.013l-.108 -.024l-.105 -.037l-.099 -.047l-.093 -.058l-.014 -.011l-.012 -.007l-.086 -.073l-.077 -.08l-.067 -.088l-.056 -.094l-.034 -.07l-.04 -.108l-.028 -.128l-.012 -.102a1 1 0 0 1 0 -.125l.012 -.1l.024 -.11l.045 -.122l1.433 -3.304l-.009 -.014a10 10 0 0 1 1.549 -12.454l.215 -.203a10 10 0 0 1 13.226 -.217m-8.997 3.09a1.5 1.5 0 0 0 -1.5 1.5v1a6 6 0 0 0 6 6h1a1.5 1.5 0 0 0 0 -3h-1l-.144 .007a1.5 1.5 0 0 0 -1.128 .697l-.042 .074l-.022 -.007a4.01 4.01 0 0 1 -2.435 -2.435l-.008 -.023l.075 -.041a1.5 1.5 0 0 0 .704 -1.272v-1a1.5 1.5 0 0 0 -1.5 -1.5" />
-                            </svg>
-                        </div>
-                    </div>
-                    
-                </div>
-
-             
-            </article>
-        </div>
+                </article>
+            </div>
         </div>
     </main>
-
 </LayoutDT>
-    <style>
-        .perspective {
-            perspective: 1000px;
-            transform-style: preserve-3d;
-        }
-        
-        .transform-style-preserve-3d {
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-        }
-        
-        
-        .backface-hidden {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        
-        .rotate-y-180 {
-            transform: rotateY(180deg);
-        }
-    
-        .card-container {
-            transition: transform 0.05s linear;
-            transform-origin: center center;
-        }
-    </style>
-      
-    <script>
-      import { gsap } from 'gsap';
-      
-      document.addEventListener('DOMContentLoaded', () => {
-    let isFlipped = false;
-    const cardContainer = document.querySelector('.card-container');
-    const mainContainer = document.querySelector('main');
+<style>
+    .perspective {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
 
-    if (!cardContainer || !mainContainer) return;
+    .transform-style-preserve-3d {
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+    }
 
-    // Configuración inicial para prevenir el comportamiento extraño en el primer flip
-    gsap.set(cardContainer, {
-        rotationY: 0,
-        transformPerspective: 1000,
-        transformStyle: "preserve-3d",
-        transformOrigin: "center center"
-    });
+    .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
 
-    function flipCard() {
-        isFlipped = !isFlipped;
-        
-        // Timeline para mejor control de la animación
-        const tl = gsap.timeline({
-            defaults: {
-                duration: 0.5,
-                ease: "power2.inOut"
-            }
-        });
+    .rotate-y-180 {
+        transform: rotateY(180deg);
+    }
 
-        tl.to(cardContainer, {
-            rotationY: isFlipped ? -180 : 0,
+    .card-container {
+        transition: transform 0.05s linear;
+        transform-origin: center center;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        let isFlipped = false;
+        const cardContainer = document.querySelector(".card-container");
+        const mainContainer = document.querySelector("main");
+
+        if (!cardContainer || !mainContainer) return;
+
+        // Configuración inicial para prevenir el comportamiento extraño en el primer flip
+        gsap.set(cardContainer, {
+            rotationY: 0,
             transformPerspective: 1000,
             transformStyle: "preserve-3d",
             transformOrigin: "center center",
-            onStart: () => {
-                // Desactivar temporalmente el efecto hover durante el flip
-                mainContainer.style.pointerEvents = 'none';
-            },
-            onComplete: () => {
-                // Reactivar efectos hover después del flip
-                mainContainer.style.pointerEvents = 'auto';
+        });
+
+        function flipCard() {
+            isFlipped = !isFlipped;
+
+            // Timeline para mejor control de la animación
+            const tl = gsap.timeline({
+                defaults: {
+                    duration: 0.5,
+                    ease: "power2.inOut",
+                },
+            });
+
+            tl.to(cardContainer, {
+                rotationY: isFlipped ? -180 : 0,
+                transformPerspective: 1000,
+                transformStyle: "preserve-3d",
+                transformOrigin: "center center",
+                onStart: () => {
+                    // Desactivar temporalmente el efecto hover durante el flip
+                    mainContainer.style.pointerEvents = "none";
+                },
+                onComplete: () => {
+                    // Reactivar efectos hover después del flip
+                    mainContainer.style.pointerEvents = "auto";
+                },
+            });
+        }
+
+        // Efecto hover 3D mejorado
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isFlipped && cardContainer) {
+                const rect = cardContainer.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // Cálculo suavizado de la rotación
+                const xAxis = ((centerX - e.clientX) / 25) * 0.8; // Reducido a 80%
+                const yAxis = ((centerY - e.clientY) / 25) * 0.8;
+
+                gsap.to(cardContainer, {
+                    rotationY: xAxis,
+                    rotationX: -yAxis,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    transformOrigin: "center center",
+                });
+            }
+        };
+
+        // Reseteo suave
+        const handleMouseLeave = () => {
+            if (!isFlipped && cardContainer) {
+                gsap.to(cardContainer, {
+                    rotationY: 0,
+                    rotationX: 0,
+                    duration: 0.5,
+                    ease: "power3.out",
+                    transformOrigin: "center center",
+                });
+            }
+        };
+
+        // Gestión de eventos táctiles
+        let startX = 0;
+        let startY = 0;
+
+        mainContainer.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        mainContainer.addEventListener("touchend", (e) => {
+            const diffX = startX - e.changedTouches[0].clientX;
+            const diffY = startY - e.changedTouches[0].clientY;
+
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                flipCard();
             }
         });
+
+        mainContainer.addEventListener("mousemove", handleMouseMove);
+        mainContainer.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    const saveContactButton = document.getElementById("saveContact");
+
+    if (saveContactButton) {
+        saveContactButton.addEventListener("click", () => {
+            const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Lic. Josué Alejandro Luna Monroy
+TITLE:Director Ejecutivo
+EMAIL:jaluna@rand.com.mx
+URL:https://rand.com.mx
+ADR;TYPE=WORK:;;Goethe 24 col. Anzures;CDMX;Alcaldía Miguel Hidalgo;;C.Z 11590
+ORG:Rand - Despacho de abogados
+END:VCARD`;
+
+            const blob = new Blob([vCard], { type: "text/vcard" });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.setAttribute("download", "josue_luna_contact.vcf");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        });
     }
-
-    // Efecto hover 3D mejorado
-    const handleMouseMove = (e: MouseEvent) => {
-        if (!isFlipped && cardContainer) {
-            const rect = cardContainer.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            // Cálculo suavizado de la rotación
-            const xAxis = ((centerX - e.clientX) / 25) * 0.8; // Reducido a 80%
-            const yAxis = ((centerY - e.clientY) / 25) * 0.8;
-            
-            gsap.to(cardContainer, {
-                rotationY: xAxis,
-                rotationX: -yAxis,
-                duration: 0.3,
-                ease: "power2.out",
-                transformOrigin: "center center"
-            });
-        }
-    };
-
-    // Reseteo suave
-    const handleMouseLeave = () => {
-        if (!isFlipped && cardContainer) {
-            gsap.to(cardContainer, {
-                rotationY: 0,
-                rotationX: 0,
-                duration: 0.5,
-                ease: "power3.out",
-                transformOrigin: "center center"
-            });
-        }
-    };
-
-    // Gestión de eventos táctiles
-    let startX = 0;
-    let startY = 0;
-
-    mainContainer.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-    });
-
-    mainContainer.addEventListener('touchend', (e) => {
-        const diffX = startX - e.changedTouches[0].clientX;
-        const diffY = startY - e.changedTouches[0].clientY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-            flipCard();
-        }
-    });
-
-    mainContainer.addEventListener('mousemove', handleMouseMove);
-    mainContainer.addEventListener('mouseleave', handleMouseLeave);
-});
-    </script>
+</script>
