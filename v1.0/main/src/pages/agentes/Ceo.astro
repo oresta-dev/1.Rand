@@ -555,14 +555,14 @@ const contactInfo = {
     if (saveContactButton) {
         saveContactButton.addEventListener("click", () => {
             const vCard = `BEGIN:VCARD
-            VERSION:3.0
-            FN:Lic. Josué Alejandro Luna Monroy
-            TITLE:Director Ejecutivo
-            EMAIL:jaluna@rand.com.mx
-            URL:https://rand.com.mx
-            ADR;TYPE=WORK:;;Goethe 24 col. Anzures;CDMX;Alcaldía Miguel Hidalgo;;C.Z 11590
-            ORG:Rand - Despacho de abogados
-            END:VCARD`;
+VERSION:3.0
+FN:Lic. Josué Alejandro Luna Monroy
+TITLE:Director Ejecutivo
+EMAIL:jaluna@rand.com.mx
+URL:https://rand.com.mx
+ADR;TYPE=WORK:;;Goethe 24 col. Anzures;CDMX;Alcaldía Miguel Hidalgo;;C.Z 11590
+ORG:Rand - Despacho de abogados
+END:VCARD`;
 
             const blob = new Blob([vCard], { type: "text/vcard" });
             const url = window.URL.createObjectURL(blob);
