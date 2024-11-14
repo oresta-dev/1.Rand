@@ -373,7 +373,18 @@ const contactInfo = {
 <script>
     import { gsap } from "gsap";
 
-    document.addEventListener("DOMContentLoaded", () => {
+    
+    function isMobileDevice() {
+        if (window.matchMedia("(max-width: 768px)").matches) return true
+        return false
+    }
+
+    console.log(isMobileDevice())
+
+
+    if (isMobileDevice()) {
+        // alert('asa')
+        document.addEventListener("DOMContentLoaded", () => {
         let isFlipped = false;
         const cardContainer = document.querySelector(".card-container");
         const mainContainer = document.querySelector("main");
@@ -415,39 +426,7 @@ const contactInfo = {
             });
         }
 
-        // Efecto hover 3D mejorado
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!isFlipped && cardContainer) {
-                const rect = cardContainer.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
-
-                // Cálculo suavizado de la rotación
-                const xAxis = ((centerX - e.clientX) / 25) * 0.8; // Reducido a 80%
-                const yAxis = ((centerY - e.clientY) / 25) * 0.8;
-
-                gsap.to(cardContainer, {
-                    rotationY: xAxis,
-                    rotationX: -yAxis,
-                    duration: 0.3,
-                    ease: "power2.out",
-                    transformOrigin: "center center",
-                });
-            }
-        };
-
-        // Reseteo suave
-        const handleMouseLeave = () => {
-            if (!isFlipped && cardContainer) {
-                gsap.to(cardContainer, {
-                    rotationY: 0,
-                    rotationX: 0,
-                    duration: 0.5,
-                    ease: "power3.out",
-                    transformOrigin: "center center",
-                });
-            }
-        };
+      
 
         // Gestión de eventos táctiles
         let startX = 0;
@@ -467,9 +446,109 @@ const contactInfo = {
             }
         });
 
-        mainContainer.addEventListener("mousemove", handleMouseMove);
-        mainContainer.addEventListener("mouseleave", handleMouseLeave);
     });
+    }
+
+    if (!isMobileDevice()) {
+        document.addEventListener("DOMContentLoaded", () => {
+            let isFlipped = false;
+            const cardContainer = document.querySelector(".card-container");
+            const mainContainer = document.querySelector("main");
+    
+            if (!cardContainer || !mainContainer) return;
+    
+            // Configuración inicial para prevenir el comportamiento extraño en el primer flip
+            gsap.set(cardContainer, {
+                rotationY: 0,
+                transformPerspective: 1000,
+                transformStyle: "preserve-3d",
+                transformOrigin: "center center",
+            });
+    
+            function flipCard() {
+                isFlipped = !isFlipped;
+    
+                // Timeline para mejor control de la animación
+                const tl = gsap.timeline({
+                    defaults: {
+                        duration: 0.5,
+                        ease: "power2.inOut",
+                    },
+                });
+    
+                tl.to(cardContainer, {
+                    rotationY: isFlipped ? -180 : 0,
+                    transformPerspective: 1000,
+                    transformStyle: "preserve-3d",
+                    transformOrigin: "center center",
+                    onStart: () => {
+                        // Desactivar temporalmente el efecto hover durante el flip
+                        mainContainer.style.pointerEvents = "none";
+                    },
+                    onComplete: () => {
+                        // Reactivar efectos hover después del flip
+                        mainContainer.style.pointerEvents = "auto";
+                    },
+                });
+            }
+    
+            // Efecto hover 3D mejorado
+            const handleMouseMove = (e: MouseEvent) => {
+                if (!isFlipped && cardContainer) {
+                    const rect = cardContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+    
+                    // Cálculo suavizado de la rotación
+                    const xAxis = ((centerX - e.clientX) / 25) * 0.8; // Reducido a 80%
+                    const yAxis = ((centerY - e.clientY) / 25) * 0.8;
+    
+                    gsap.to(cardContainer, {
+                        rotationY: xAxis,
+                        rotationX: -yAxis,
+                        duration: 0.3,
+                        ease: "power2.out",
+                        transformOrigin: "center center",
+                    });
+                }
+            };
+    
+            // Reseteo suave
+            const handleMouseLeave = () => {
+                if (!isFlipped && cardContainer) {
+                    gsap.to(cardContainer, {
+                        rotationY: 0,
+                        rotationX: 0,
+                        duration: 0.5,
+                        ease: "power3.out",
+                        transformOrigin: "center center",
+                    });
+                }
+            };
+    
+            // Gestión de eventos táctiles
+            let startX = 0;
+            let startY = 0;
+    
+            mainContainer.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            });
+    
+            mainContainer.addEventListener("touchend", (e) => {
+                const diffX = startX - e.changedTouches[0].clientX;
+                const diffY = startY - e.changedTouches[0].clientY;
+    
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    flipCard();
+                }
+            });
+    
+            mainContainer.addEventListener("mousemove", handleMouseMove);
+            mainContainer.addEventListener("mouseleave", handleMouseLeave);
+        });
+    }
+
 
     const saveContactButton = document.getElementById("saveContact");
 
