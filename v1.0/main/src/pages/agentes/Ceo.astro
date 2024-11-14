@@ -165,6 +165,17 @@ import LayoutDT from "@layouts/LayoutDT.astro";
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
         }
+
+        .card-front img {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .card-front, .card-back {
+          
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
         
         .backface-hidden {
             backface-visibility: hidden;
