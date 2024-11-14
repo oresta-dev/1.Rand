@@ -198,7 +198,76 @@ import LayoutDT from "@layouts/LayoutDT.astro";
 
     if (!cardContainer || !mainContainer) return;
 
-    // Detectar el gesto de swipe
+    // Configuración inicial para prevenir el comportamiento extraño en el primer flip
+    gsap.set(cardContainer, {
+        rotationY: 0,
+        transformPerspective: 1000,
+        transformStyle: "preserve-3d",
+        transformOrigin: "center center"
+    });
+
+    function flipCard() {
+        isFlipped = !isFlipped;
+        
+        // Timeline para mejor control de la animación
+        const tl = gsap.timeline({
+            defaults: {
+                duration: 0.5,
+                ease: "power2.inOut"
+            }
+        });
+
+        tl.to(cardContainer, {
+            rotationY: isFlipped ? -180 : 0,
+            transformPerspective: 1000,
+            transformStyle: "preserve-3d",
+            transformOrigin: "center center",
+            onStart: () => {
+                // Desactivar temporalmente el efecto hover durante el flip
+                mainContainer.style.pointerEvents = 'none';
+            },
+            onComplete: () => {
+                // Reactivar efectos hover después del flip
+                mainContainer.style.pointerEvents = 'auto';
+            }
+        });
+    }
+
+    // Efecto hover 3D mejorado
+    const handleMouseMove = (e: MouseEvent) => {
+        if (!isFlipped && cardContainer) {
+            const rect = cardContainer.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Cálculo suavizado de la rotación
+            const xAxis = ((centerX - e.clientX) / 25) * 0.8; // Reducido a 80%
+            const yAxis = ((centerY - e.clientY) / 25) * 0.8;
+            
+            gsap.to(cardContainer, {
+                rotationY: xAxis,
+                rotationX: -yAxis,
+                duration: 0.3,
+                ease: "power2.out",
+                transformOrigin: "center center"
+            });
+        }
+    };
+
+    // Reseteo suave
+    const handleMouseLeave = () => {
+        if (!isFlipped && cardContainer) {
+            gsap.to(cardContainer, {
+                rotationY: 0,
+                rotationX: 0,
+                duration: 0.5,
+                ease: "power3.out",
+                transformOrigin: "center center"
+            });
+        }
+    };
+
+    // Gestión de eventos táctiles
     let startX = 0;
     let startY = 0;
 
@@ -216,47 +285,7 @@ import LayoutDT from "@layouts/LayoutDT.astro";
         }
     });
 
-    function flipCard() {
-        isFlipped = !isFlipped;
-        
-        gsap.to(cardContainer, {
-            rotationY: isFlipped ? -180 : 0,
-            duration: 0.5,
-            ease: "power2.inOut",
-            transformPerspective: 1000,
-            transformStyle: "preserve-3d"
-        });
-    }
-
-    // Efecto hover 3D
-    mainContainer.addEventListener('mousemove', (e) => {
-        if (!isFlipped) {
-            const rect = cardContainer.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            const xAxis = (centerX - e.clientX) / 25;
-            const yAxis = (centerY - e.clientY) / 25;
-            
-            gsap.to(cardContainer, {
-                rotationY: xAxis,
-                rotationX: -yAxis,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        }
-    });
-
-    // Resetear posición
-    mainContainer.addEventListener('mouseleave', () => {
-        if (!isFlipped) {
-            gsap.to(cardContainer, {
-                rotationY: 0,
-                rotationX: 0,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        }
-    });
+    mainContainer.addEventListener('mousemove', handleMouseMove);
+    mainContainer.addEventListener('mouseleave', handleMouseLeave);
 });
     </script>
