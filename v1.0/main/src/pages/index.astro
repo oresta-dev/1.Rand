@@ -8,16 +8,45 @@ import VisionM from '@sections/VisionM.astro';
 import { Services as LegalServices } from '../const/services.js'
 import ValueWord from '@components/ValueWord.astro';
 import ValuesWords from '@components/ValuesWords';
+import ClientIcon from 'src/Icons/ClientIcon.astro';
+import ValuesCard from '@components/ValuesCard.astro';
+import ServiceIcon from 'src/Icons/ServiceIcon.astro';
+import ExperiencieIcon from 'src/Icons/ExperiencieIcon.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 
 
-    <Hero/>
+  <Hero/>
+  
+    <section class=" py-32 flex items-center justify-center">
+      <div class="mx-6 max-w-screen-xl flex flex-col gap-5">
+        
+        <h2 class="uppercase flex gap-2 text-3xl lg:text-4xl mx-auto"><strong class="text-[#2d2e3e]">Nuestro</strong>sello</h2>
+        <!-- <h2>Nuestro sello</h2> -->
+         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+           <ValuesCard value="Servicio" description="Nos comprometemos a brindar calidad y atención eficiente a nuestros clientes, con una comunicación efectiva en cada fase del proceso. Contamos con profesionales expertos para asegurar la mejor atención.">
+             <ServiceIcon slot='icon'/>
+           </ValuesCard>
+           <ValuesCard value="Cliente" description="Nuestros clientes son esenciales para el crecimiento de RAND. Los desafíos que nos presentan motivan a nuestro equipo a superarse, buscando la excelencia y ganando su confianza.">
+             <ClientIcon slot='icon'/>
+           </ValuesCard>
+           <ValuesCard value="Experiencia" description="Con más de 25 años de experiencia, contamos con un equipo de contadores y abogados expertos. Los retos que enfrentamos nos impulsan a ser mejores, actuando con justicia, transparencia.">
+             <ExperiencieIcon slot='icon'/>
+           </ValuesCard>
+         </div>
+
+      
+
+     
+
+
+
+
+      </div>
+    </section>
     <LegalExperience/>
     <VisionM/>
-
-  
 
 
 
